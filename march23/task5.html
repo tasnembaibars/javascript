@@ -1,27 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>
+
+    </title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+
+    <style>
+    span{
+        color: red;
+
+    } 
+    #btn{
+        display: none;
+    }
+    </style>
 </head>
+
 <body>
-    <form action="" onchange="pwordch()" id="pppp">
-    <label for="">Password (min 6 char)</label>
-    <br>
-    <input type="password" id="pword" >
-    <label for="">repeat Password </label>
-    <input type="password" id="pword2" >
-    <br>
-    <button id="sub">submit</button>
-</form>
+    
+        <label>Password (min 6 chars)</label>
+        <input type="password" class="pass" onchange="checkpass()">
+        <span class="err"></span>
+        <br><br>
+        <label> Retype Password</label>
+        <input type="password" class="pass" onchange="checkpass()">
+        <span class="err"></span>
+
+        <button type="submit" id="btn" >Submit</button>
+   
     <script>
-        function pwordch(){
-            let pass=document.getElementById("pword").value;
-            let pass2=document.getElementById("pword2").value;
-            
-        }
+       
+       let p=document.getElementsByClassName('pass');
+       let err = document.getElementsByClassName('err');
+       let btn = document.getElementById('btn');
+       function checkpass()
+       {
+        let p1=p[0].value;
+        let p2=p[1].value;
+
+
+           if(p1.length<6)
+           {
+              err[0].innerHTML="Too short";
+           }
+           else {
+            err[0].innerHTML="";  
+           }
+           if(p1 == p2)
+           {
+               err[1].innerHTML="";
+               btn.style.display="block"
+           }
+           else{
+            err[1].innerHTML="password do not match";
+           }
+
+
+           }
+           
+       
     </script>
 </body>
+
 </html>
