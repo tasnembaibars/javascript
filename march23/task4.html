@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Font</label>
+    <select onchange="type()" id="font1">
+     <option value="0" id="op1">select</option>   
+    <option value="1" id="po2">Arial</option>
+    <option value="2" id="op3">Cursive</option>
+    <option value="3" id="op4">San-serif</option>
+    </select> 
+    <label for="">size</label>
+    <select onchange="size()" id="size1">
+     <option value="0" id="op1">select</option>   
+    <option value="1" id="po2">20px</option>
+    <option value="2" id="op3">40px</option>
+    <option value="3" id="op4">60px</option>
+    </select> 
+    <input type="checkbox" onchange="italic()" id="ita" ><span>italic</span>
+    <input type="checkbox" onchange="bold()" id="bo" ><span>bold</span>
+    <input type="checkbox" onchange="underlined()" id="under" ><span>underline</span>
+
+    <p id="will" onchange="text()" style="border: solid black 2px ; height: 200px;width: 400px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut numquam sint ipsa vitae.</p>
+    <script>
+        function type(){
+            let result= document.getElementById("font1").value;
+            if(result == "1"){
+                document.getElementById("will").style.fontFamily= 'Arial';
+            }else if (result=="2"){
+                document.getElementById("will").style.fontFamily='Cursive';
+            }else if (result=="3"){
+                document.getElementById("will").style.fontFamily='San-serif';}
+        }
+
+        function size(){
+            let fontsize =document.getElementById("size1").value;
+            if(fontsize=="1"){
+                document.getElementById("will").style.fontSize='20px';
+            }else if (fontsize=="2"){
+                document.getElementById("will").style.fontSize='40px';
+            }else if (fontsize=="3"){
+                document.getElementById("will").style.fontSize='60px';
+
+        }
+    }
+    let textchange = document.getElementById("will");
+    if (document.getElementById("ita").Checked) {
+    will.style.fontStyle = 'italic';
+}
+    if (document.getElementById("bo").Checked) {
+    will.style.fontSize = 'Bold';
+}
+if (document.getElementById("under").Checked) {
+    will.style.textDecorationLine = 'Underline';
+}
+    </script>
+</body>
+</html>

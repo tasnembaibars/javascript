@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: rgb(247, 237, 223);
+            border: solid black 2px;
+            height: 70px;
+            width: 250px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="yell" onmouseover="mouseover()" onmouseout="mouseo()">Hello world !</div>
+    <script>
+        function mouseover(){
+         document.getElementById('yell').innerHTML="Do you need help?";
+        }
+        function mouseo(){
+         document.getElementById('yell').innerHTML="helloworld!";
+        }
+    </script>
+</body>
+</html>
