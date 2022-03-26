@@ -125,7 +125,7 @@ let animals = [] ;
 length.animals = 5 ;
 animals[0] = ['zebra']
 animals[1] = ['elephant']
-console.log(`${animals[0] },${animals[1]} `)
+console.log(`{${animals[0] },${animals[1]} }`)
 
 
 /*
@@ -143,10 +143,13 @@ Ex: indexOfArray(nums,4) => 9
 */
 var num= [1,2,3,8,9]
 function indexof(num , index){
-    indexofarray(num,[])
- return  indexofarray
+ var arr=[]
+ for(i=0;i<num.length;i++){
+     arr[i]=num[i]
+ }
+ return arr;
 }
-
+console.log(indexof(num))
 
 /*
 11
@@ -163,7 +166,7 @@ var nums = [1, 2, 3, 8, 9];
 
 function arrayExceptLast(array) {
     var arr = [];
-    for (var i = 0; i < array.length - 1; i++) {
+    for ( i = 0; i < array.length - 1; i++) {
         arr[i] = array[i]
     }
     return arr;
@@ -180,12 +183,13 @@ Ex: addToEnd(nums,55) =>  [1,2,3,8,55]
 
 **try more cases by your self
 */
-var num= [1,2,3,8,9]
-function addToEnd (array,value){
-    array[array.length - 1] = value;
-    return array
-}
-console.log(addToEnd(nums, 55));
+let array1 =[1,2,3,8,9];
+
+function addToEnd(array,value){
+   array.pop();
+   array.push(value);
+}        
+console.log(addToEnd(array1,55));
 // all the exercises below should solved 2 times: 1- for loop 2- while lopp
 /*
 13
@@ -199,17 +203,22 @@ Ex: sumArray(nums) => 23
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-var nums = [1, 2, 3, 8, 9];
+//for method
+var num =[1,2,3,8,9]
 
-function sumArray(array) {
-    var sum = 0;
-    for (var i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
-    console.log(sum);
+
+function sumArray(num){
+    var sum =0
+  for(i=0;i<num.length;i++){
+     sum += num[i] ;
+     
+  }
+  console.log(sum)
 }
-sumArray(nums);
+ sumArray(num);
+ 
 
+ 
 /*
 14
 Create a function called minInArray
@@ -222,11 +231,17 @@ Ex: minInArray(nums) => 1
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-var nums= [1,2,3,8,9]
-function minInArray (array){
-    var min=array[0];
+var arr= [1,2,3,8,9]
+function minInArray(array){
+   let min = arr[0]
+   for(i=0;i<arr.length;i++){
+   if(min[0]<arr[i]){
+       min=arr[i]
+   }
 }
-
+   return min
+}
+console.log( minInArray(arr))
 /*
 15
 Create a function called removeFromArray
@@ -293,6 +308,7 @@ Ex: aveArray(nums) => 16.6
 **try more cases by your self
 */
 var nums = [1, 2, 3, 8, 9]
+
 function aveArray(array) {
 
     var sum = 0;
@@ -303,6 +319,8 @@ function aveArray(array) {
     return sum / array.length;
 }
 console.log(aveArray(nums));
+
+
 
 /*
 18
@@ -317,17 +335,18 @@ Ex: shorterInArray(strings) => "alex"
 **try more cases by your self
 */
 var strings= ["alex","mercer","madrasa","rashed2","emad","hala"]
-function shorterInArray(array){
-    var t=strings[0].length;
-
-    for( var i=1; i<array.length;i++){
-        if( array[i].length<t){
-            t=array[i].length;
-        }
+function shorterInArray(arr){
+ index =0;
+     let  ar=arr[0];
+for (i=0;i<arr.length;i++){
+    if(ar.length<arr[i].length){
+        ar=arr[i];
     }
-  return t;
 }
-console.log(shorterInArray(strings));
+ return ar;
+}
+console.log(shorterInArray(strings))
+
 /*
 19
 Create a function called repeatChar
@@ -341,19 +360,19 @@ Ex: repeatChar(string,"z") => 0
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-function repeatCharWhile(string , char){
-    count = 0;
-    let i = 0;
-    while(i < string.length){
-        if(string[i] == char)
-            count++;
-        i++;
-    }
-    return count;
-}
 var string= "alex mercer madrasa rashed2 emad hala"
-console.log(repeatChar(string,"a"));
+function repeatChar(string,char){
+  let   count=0;
+  let x= char
+      for(i=0;i<string.length;i++){
+      if(string[i]==x){
+      count ++;
+    }
+}
+return count;
+}
 
+console.log(repeatChar(string,"d"))
 
 /*
 20
@@ -367,10 +386,20 @@ Ex: evenIndexOddLength(strings) => ["madrasa"]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-function evenIndexOddLength (){
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"]
+function evenIndexOddLength(array){
+     let arr=[]
+     let index=0
+     for(i=0;i<array.length;i++){
 
+         if(i %2 == 0 && array[i].length %2 != 0 ){
+              arr[index]=array[i];
+              index++;
+         }
+     }
+     return arr
 }
-
+console.log(evenIndexOddLength(strings))
 /*
 21
 Create a function called powerElementIndex
@@ -383,8 +412,19 @@ Ex: powerElementIndex(nums) => [0, 5, 16, 27, 16, 100000]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+var nums= [44, 5, 4, 3, 2, 10]
 
-
+function powerElementIndex(array){ 
+    let arr =[]
+    let index=0
+      for(i=0;i<array.length;i++){
+         arr[i]=Math.pow(nums[i] , i);
+           
+           
+      }
+      return arr
+}
+console.log(powerElementIndex(nums))
 /*
 22
 Create a function called evenNumberEvenIndex
