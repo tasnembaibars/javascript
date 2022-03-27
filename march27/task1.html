@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset >
+        <legend>Personal Form</legend>
+        <br>
+        <form action="" >
+            
+        <label for="">User Name : </label>
+        <input type="text" id="usern" placeholder="user name">
+        
+        <label for="">Gender : </label>
+        <input type="radio"  id="userg" name="gen" value="male"> <span>Male</span>
+        <input type="radio" id="userg1" name="gen" value="female"> <span>Female</span>
+         <br> <br>
+        <label for="">Age:</label>
+        <input type="text" id="usera" placeholder="user age">
+        <label for="">Birth Date:</label>
+        <input type="date" id="userb" placeholder="user Birth date">
+         <br> <br>
+         <label for="">Major : </label>
+        <input type="text" id="userm" placeholder="user major">
+        <label for="">University : </label>
+        <input type="text" id="useru" placeholder="user University">
+        <br> <br>
+        <label for="">Personal photo :</label>
+        <input type="file" id="uimage" placeholder="insert please">
+        <br> <br> <br>
+        <label for="">Programming section:</label>
+        <br> <br>
+        <label for="">Favorite programming language:</label>
+        <input type="text " placeholder="what you have learnt? " id="psec">
+        <label for="">Certificates:</label>
+        <input type="text " placeholder=" earned Certificates" id="csec">
+        <input type="file" id="cersec" placeholder="upload files">
+        <br> <br> <br>
+        <label for="">User Family Information :</label>
+        <br> <br>
+        <label for="">Family member number:</label>
+        <input type="text" id="fmember" placeholder="number">
+        <br>
+        <label for="">Family member 1:</label>
+        <input type="text" id="fmember1" placeholder="name">
+        <label for="">Brief description : </label>
+        <textarea name="" id="des1" cols="30" rows="3" placeholder="education"></textarea>
+        <br> <br>
+        <label for="">Family member 2:</label>
+        <input type="text" id="fmember2" placeholder="name">
+        <label for="">Brief description : </label>
+        <textarea name="" id="des2" cols="30" rows="3" placeholder="education"></textarea><br> <br>
+        <button id="submit" onclick="sub()">Submit</button> 
+    </form>
+    </fieldset>
+       <br><br>
+        <div style="border: solid 2px rgb(197, 192, 192);margin: 30px;padding: 10px;">
+        <h4>applicant answers:</h4> 
+        <p> answers the applicant has submitted </p></div>
+
+        <div id="applicant" style="border: solid 2px rgb(197, 192, 192);margin: 30px;padding: 10px;"></div> 
+        <div id="applicant2" style="border: solid 2px rgb(197, 192, 192);margin: 30px;padding: 10px;"></div>
+
+    <script src="task1.js"></script>
+
+
+</body>
+</html>
