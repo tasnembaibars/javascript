@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Enter your email</label>
+        <input type="email" id="email" class="" >
+        <label for="">Enter your phine number</label>
+        <input type="text" id="number">
+        <button onclick="submit()"> submit</button>
+        <span></span>
+    </form>
+     
+    <script>
+    function validateEmail (elementValue){
+   var emailpattern= /^([a-z\d\.-]+)@([a-z\d-]+).()\.([a-z]{2,8})$/;
+  if ( emailpattern.test(elementValue)){
+     alert("your email is valid");
+  }else{
+  alert("your email is Invalid"); 
+  }
+
+    }
+    function submit(){
+      let input=  document.getElementById('email').value;
+        validateEmail(input);
+    }
+    </script>
+</body>
+</html>

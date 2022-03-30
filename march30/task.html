@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Registration form</legend>
+        <div>
+    <form action="">
+        <label for="">First name :</label>
+     <input type="text" id="fn" placeholder="name"> <br> <br>
+     <label for="">Last name :</label>
+     <input type="text" id="ln" placeholder="name"> <br> <br>
+     <label for="">Birth date:</label>
+     <input type="date" id="bd" > <br> <br>
+     <label for="">Email :</label>
+     <input type="text" id="em" placeholder="email@...."> <br> <br>
+     <label for="">Please confirm your email :</label>
+     <input type="text" id="em2" placeholder="email@...."> <br> <br>
+     <label for="">Password:</label>
+     <input type="password" id="pass1" placeholder="*******"> <br> <br>
+     <label for="">Please confirm your password :</label>
+     <input type="password" id="pass2" placeholder="*******"> <br> <br>
+     <button onclick="checkValidation()">submit</button>
+     <span id="Note22">  </span></div>
+    </fieldset>
+    </form>
+
+    <script>
+       
+        function checkValidation (){
+            const namep= /^[a-z]+$/gi;
+            const emailp = /^[A-Za-z0-9_\-\.]+\@([A-Za-z0-9_\-\.])+\.([A-Za-z])/;
+            const passp = /^[A-Z][a-zA-Z0-9]{9}/;
+                fm = ''
+        if (document.getElementById('fn').value.match(namep) ){
+           
+           fm.innerHTML="good";
+           
+        }else{
+            fm.innerHTML="wrong name";
+        }
+        if(document.getElementById('ln').value.match(namep)){
+            fm.innerHTML="good";
+        }else{
+            fm.innerHTML="wrong";
+        }
+        if(document.getElementById('em').value.match(emailp) && document.getElementById('em2').value.match(emailp)){
+
+            fm.innerHTML="good";
+        }else{
+            fm.innerHTML="wrong";
+        }
+       if(document.getElementById('em').value.match(emailp) == document.getElementById('em2').value.match(emailp)){
+           fm.innerHTML=''
+       }else{
+            fm.innerHTML="confirm email does not match email";
+        }
+
+        if(document.getElementById('pass1').value.match(passp) && document.getElementById('pass2').value.match(passp)){
+
+            fm.innerHTML="good";
+        }else{
+            fm.innerHTML="wrong";
+        }
+        if(document.getElementById('pass1').value.match(passp) == document.getElementById('pass2').value.match(passp)){
+           fm.innerHTML=''
+       }else{
+            fm.innerHTML="confirm password does not match password";
+        }
+        
+        document.getElementById('Note22').innerHTML=fm;
+       
+        }
+       
+    </script>
+</body>
+</html>
